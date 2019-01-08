@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>angularJS入门小demo-6 循环对象数组</title>
+		<script src="../js/angular.min.js"></script>
+		<script>
+			//建立模块
+			var app=angular.module("myApp",[]);
+			//创建控制器	$scope就是控制层与视图层之间交换数据的桥梁
+			app.controller("myController",function($scope){
+				$scope.list=[
+					{name:'张三',shuxue:100,yuwen:100},
+					{name:'李四',shuxue:90,yuwen:92},
+					{name:'王五',shuxue:40,yuwen:50}
+				];
+			});
+			
+		</script>
+		
+		
+	</head>
+	<body ng-app="myApp" ng-controller="myController">
+	
+	<table>
+		<tr>
+			<td>姓名</td>
+			<td>数学</td>
+			<td>语文</td>
+		</tr>
+		<tr ng-repeat="entity in list">
+			<td>{{entity.name}}</td>
+			<td>{{entity.shuxue}}</td>
+			<td>{{entity.yuwen}}</td>
+		</tr>
+		
+		
+	</table>
+		
+	</body>
+</html>
